@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="mobile">
+    <div class="header">
+        <h2>Login</h2>
+    </div>
+
+    <div class="content">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <button>Login</button>
+        </form>
+
+        <div class="text-center">
+            <a href="{% url 'signup' %}">Sign Up</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="mobile">
+    <div class="header">
+        <h2>Home Screen</h2>
+    </div>
+
+    <div class="content">
+        <h3>Featured Categories</h3>
+        <div class="card-row">
+            {% for c in categories %}
+            <div class="card">{{ c.name }}</div>
+            {% endfor %}
+        </div>
+
+        <h3>Featured Products</h3>
+        <div class="card-row">
+            {% for p in products %}
+            <div class="card">
+                <strong>{{ p.name }}</strong><br>
+                ₹{{ p.price }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

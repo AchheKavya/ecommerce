@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body { margin: 0; font-family: Arial; }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .banner {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+        }
+
+        .form-box {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .form {
+            width: 80%;
+            max-width: 350px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="page">
+
+    <!-- LEFT: IMAGE -->
+    <div class="banner"
+         style="background-image: url('{{ banner.image.url }}');">
+        <div class="overlay"></div>
+    </div>
+
+    <!-- RIGHT: FORM -->
+    <div class="form-box">
+        <div class="form">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
